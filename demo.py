@@ -2,7 +2,7 @@
 """
 Created on Thu Jan 17 10:31:32 2019
 
-@author: Hongye Guo
+@author: Hongye Guo & Yuxuan Gu
 
 """
 
@@ -60,36 +60,15 @@ def demo(ID, start, end, kmin, kmax, cores, curvePara, CapabilityCap, threshold=
 
 if __name__ == '__main__':
     
-    # %%
     # read DUID data
-    # ID = 'BW01','BARRON-1','CALL_B_1','DDPS1','ER01','GSTONE1','KPP_1','LD01','LYA1','LYA2','OSB-AG','SHGEN','STAN-1','SWAN_E','WHOE#1'
-    # ID special: HVGTS样本过少，KPP_1自适应聚类需要算很久
-    # IDtotal = ['BW01','BARRON-1','CALL_B_1','DDPS1','ER01','GSTONE1','KPP_1','LD01','LYA1','LYA2','OSB-AG','SHGEN','STAN-1','SWAN_E','WHOE#1']
-    
-    # IDtotal = ['AGLHAL', 'AGLSOM', 'ANGAST1', 'BALDHWF1', 'BARRON-1', 'BARRON-2', 'BASTYAN', 'BBTHREE1', 'BBTHREE2', 'BBTHREE3', 'BDL01', 'BDL02']
-    # IDtotal = ['BLUFF1', 'BRAEMAR1', 'BRAEMAR2', 'BRAEMAR3', 'BRAEMAR5', 'BRAEMAR6', 'BRAEMAR7', 'BROKENH1', 'BW01', 'BW02', 'BW03', 'BW04']
-    # IDtotal = ['CALL_B_1', 'CALL_B_2', 'CETHANA', 'CG1', 'CG2', 'CG3', 'CG4', 'CPP_3', 'CPP_4', 'CPSA', 'DARTM1', 'DDPS1', 'DEVILS_G']
-    # IDtotal = ['CG3', 'CG4', 'CPP_3', 'CPP_4', 'CPSA', 'DARTM1', 'DDPS1', 'DEVILS_G', 'DRYCGT1', 'DRYCGT2', 'DRYCGT3', 'EILDON1', 'EILDON2', 'ER01', 'ER02', 'ER03', 'ER04', 'FISHER']
-    # IDtotal = ['DRYCGT1', 'DRYCGT2', 'DRYCGT3', 'EILDON1', 'EILDON2', 'ER01', 'ER02', 'ER03', 'ER04', 'FISHER']
-    # IDtotal = ['GORDON', 'GSTONE1', 'GSTONE2', 'GSTONE3', 'GSTONE4', 'GSTONE5', 'GSTONE6', 'GUTHEGA', 'HALLWF1', 'HALLWF2', 'HVGTS', 'JBUTTERS']
-    # IDtotal = ['JLA01', 'JLA02', 'JLA03', 'JLA04', 'JLB01', 'JLB02', 'JLB03', 'KAREEYA1', 'KAREEYA2', 'KAREEYA3', 'KAREEYA4', 'KPP_1', 'LADBROK1']
-    # IDtotal = ['LADBROK2', 'LD01', 'LD02', 'LD03', 'LD04', 'LEM_WIL', 'LI_WY_CA', 'LKBONNY2', 'LKBONNY3', 'LK_ECHO', 'LNGS1', 'LNGS2', 'LONSDALE']
-    # IDtotal = ['LOYYB1', 'LOYYB2', 'LYA1', 'LYA2', 'LYA3', 'LYA4', 'MACARTH1', 'MACKAYGT', 'MACKNTSH', 'MCKAY1', 'MEADOWBK', 'MINTARO', 'MORTLK11']
-    # IDtotal = ['MORTLK12', 'MP1', 'MP2', 'MPP_1', 'MPP_2', 'MSTUART1', 'MSTUART2', 'MSTUART3', 'MURRAY', 'NBHWF1', 'NPS', 'NYNGAN1', 'OAKEY1', 'OAKEY2']
-    # IDtotal = ['OAKLAND1', 'OSB-AG', 'POAT110', 'POAT220', 'POR01', 'POR03', 'PPCCGT', 'PTSTAN1', 'PUMP1', 'PUMP2', 'QPS1', 'QPS2', 'QPS3', 'QPS4', 'QPS5']
-    # IDtotal = ['REECE1', 'REECE2', 'ROMA_7', 'ROMA_8', 'SHGEN', 'SHPUMP', 'SNUG1', 'STAN-1', 'STAN-2', 'STAN-3', 'STAN-4', 'SWAN_E', 'TALWA1']
-    # IDtotal = ['TARONG#1', 'TARONG#2', 'TARONG#3', 'TARONG#4', 'TARRALEA', 'TNPS1', 'TORRA1', 'TORRA2', 'TORRA3', 'TORRA4', 'TORRB1', 'TORRB2', 'TORRB3', 'TORRB4']
-    # IDtotal = ['TREVALLN', 'TRIBUTE', 'TUMUT3', 'TUNGATIN', 'TVCC201', 'TVPP104', 'UPPTUMUT', 'URANQ11', 'URANQ12', 'URANQ13', 'URANQ14', 'VP5', 'VP6']
-    # IDtotal = ['VPGS1', 'VPGS2', 'VPGS3', 'VPGS4', 'VPGS5', 'VPGS6', 'WHOE#1', 'WHOE#2', 'WKIEWA1', 'WKIEWA2', 'WOODLWN1', 'YABULU', 'YABULU2']
-    # IDtotal = ['YWPS1', 'YWPS2', 'YWPS3', 'YWPS4']
+    IDtotal = ['AGLSOM', 'BBTHREE2', 'BW02']  # test
 
-    
-
-    IDtotal = ['HALLWF1','GSTONE4','AGLSOM','CETHANA','TARONG#3','STAN-2','VPGS6','ER03','TRIBUTE','BW02','BBTHREE2','KAREEYA1']
+    # IDtotal = ['AGLSOM', 'BBTHREE2', 'BW02', 'CETHANA', 'ER03', 'GSTONE4', 'HALLWF1', 'KAREEYA1', 'STAN-2', 'TARONG#3',
+    #            'TRIBUTE', 'UTANQ14', 'VPGS6']  # total
 
     # set calculation time
-    start = dt.datetime(2017,10,18,4,30)
-    end = dt.datetime(2018,10,31,4,0) 
+    start = dt.datetime(2017, 10, 18, 4, 30)
+    end = dt.datetime(2018, 10, 31, 4, 0)
     
     # set parameters for clustering
     kmin = 2

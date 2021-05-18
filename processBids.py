@@ -2,7 +2,7 @@
 """
 Created on Wed Jan 16 21:09:41 2019
 
-@author: Gu
+@author: Hongye Guo & Yuxuan Gu
 
 """
 
@@ -135,7 +135,7 @@ def pool_sample(i, bid, stepSeq):
 def generateCurves(ID, start, end, cores, CapabilityCap=0.9, num=100):
     t0 = time.time()
     # 设置相对路径
-    data_dir = '../data/Bid/'
+    data_dir = './data/Bid/'
     # 读取报价数据
     bid = pd.read_csv(data_dir + ID + '.txt', index_col=0, header=0)
     timestamp = pd.date_range(start='2017-10-18 04:30:00', end='2018-11-15 04:00:00', freq='30min')
@@ -164,11 +164,11 @@ def generateCurves(ID, start, end, cores, CapabilityCap=0.9, num=100):
     ret = np.concatenate(ret,0)
     curves = pd.DataFrame(ret, index=bid.index, columns=range(1,num+1))
     # 生成保存路径
-    save_dir = '../data/Curves/'
+    save_dir = './data/Curves/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     save_path = save_dir+ID+'_'+start.strftime("%Y%m%d")+'_'+end.strftime("%Y%m%d")+'.csv'
-    save_path2 = '../result/Cluster/'+ID+'_'+start.strftime("%Y%m%d")+'_'+end.strftime("%Y%m%d")+'-Capacity.csv'
+    save_path2 = './result/Cluster/'+ID+'_'+start.strftime("%Y%m%d")+'_'+end.strftime("%Y%m%d")+'-Capacity.csv'
     curves.to_csv(save_path)
     # bidC.to_csv(save_path2)
     print(str(time.strftime("%Y%m%d %X", time.localtime()) )+' '+'Function: generateCurves is done: '+ str(time.time()-t0))

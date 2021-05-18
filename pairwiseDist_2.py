@@ -2,7 +2,7 @@
 """
 Created on Thu Jan 17 10:33:39 2019
 
-@author: Hongye Guo
+@author: Hongye Guo & Yuxuan Gu
 
 """
 
