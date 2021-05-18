@@ -7,8 +7,8 @@ If you find any bug or have comments for me, be welcome to contact me at hyguo@m
 
 ### Use Guides
 The main code is named as 'demo.py', which uses several functions to cluster raw bidding data as typical patterns.  
-The raw bidding data are stored in 'data' folder. Here has been several example files in this folder.  
-The output of the algorithm, which is the clustering results, will be stored in "result" folder.
+The raw bidding data are stored in './data/Bid' folder. Here has been several example files in this folder.  
+The output of the algorithm, which is the clustering results, will be stored in "./data/Cluster" folder.
 
 ### Applications
 The code can be used for academic using. If it has some helps for your research, you can quote the paper [1].  

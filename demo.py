@@ -49,26 +49,26 @@ def demo(ID, start, end, kmin, kmax, cores, curvePara, CapabilityCap, threshold=
     curves['probC'] = probC1
 
     # generate result path
-    save_dir = '../result/Cluster/'
+    save_dir = './data/Cluster/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     save_path = save_dir + ID  +'_'+start.strftime("%Y%m%d")+'_'+end.strftime("%Y%m%d")+'-Ver'+ str(version)+'-Thr' + str(threshold) +'-Cap'+ str(CapabilityCap) + '-vldNum' + str(valid_MDinds) + '-k' + str(k)+'.csv'
     curves.to_csv(save_path)
     print(str(time.strftime("%Y%m%d %X", time.localtime()) )+' '+'Function: demo4 is done: '+str(time.time()-t0))
-    return save_path,J, M, C, k, vC, numC, probC, curveAvg, curves, curves1, valid_MDinds
+    return save_path, J, M, C, k, vC, numC, probC, curveAvg, curves, curves1, valid_MDinds
 
 
 if __name__ == '__main__':
     
     # read DUID data
-    IDtotal = ['AGLSOM', 'BBTHREE2', 'BW02']  # test
+    IDtotal = ['AGLSOM']  # test
 
     # IDtotal = ['AGLSOM', 'BBTHREE2', 'BW02', 'CETHANA', 'ER03', 'GSTONE4', 'HALLWF1', 'KAREEYA1', 'STAN-2', 'TARONG#3',
     #            'TRIBUTE', 'UTANQ14', 'VPGS6']  # total
 
     # set calculation time
-    start = dt.datetime(2017, 10, 18, 4, 30)
-    end = dt.datetime(2018, 10, 31, 4, 0)
+    start = dt.datetime(2017, 11, 1, 4, 30)  # starts from 20171018
+    end = dt.datetime(2017, 11, 30, 4, 0)   # ends until 20181031
     
     # set parameters for clustering
     kmin = 2

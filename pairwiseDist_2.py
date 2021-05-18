@@ -233,9 +233,9 @@ def DisMatGen(DUname):
     t0 = time.time()
     filename = DUname + '_20171018_20181031.csv'
     filename1 = DUname + '_20171018_20181031.xlsx'
-    path = '../data/Curves/' + filename    
-    distpath = '../data/PairwiseDistance/Distance_' + filename
-    curvepath = '../data/PairwiseDistance/Curve_' + filename1
+    path = './data/Curves/' + filename
+    distpath = './data/PairwiseDistance/Distance_' + filename
+    curvepath = './data/PairwiseDistance/Curve_' + filename1
     curves = pd.read_csv(path, index_col=0, header=0)
     
     curves_filtered, curves_label = curveFilter(curves.copy())

@@ -233,9 +233,9 @@ def DisMatGen(DUname):
     t0 = time.time()
     filename = DUname + '_20171018_20181031.csv'
     filename1 = DUname + '_20171018_20181031.xlsx'
-    path = '../data/Curves/' + filename    
-    distpath = '../data/PairwiseDistance/Distance_' + filename
-    curvepath = '../data/PairwiseDistance/Curve_' + filename1
+    path = './data/Curves/' + filename
+    distpath = './data/PairwiseDistance/Distance_' + filename
+    curvepath = './data/PairwiseDistance/Curve_' + filename1
     curves = pd.read_csv(path, index_col=0, header=0)
     dist, curves0, curveAvg, curveLen = caldist(path, 18, 100, -100, 500, 1000) 
     distDF = pd.DataFrame(dist)
@@ -254,9 +254,9 @@ def DisMatGen_Tcor(DUname):
     t0 = time.time()
     filename = DUname + '_20171018_20181031.csv'
     filename1 = DUname + '_20171018_20181031.xlsx'
-    path = '../data/Curves/' + filename    
-    distpath = '../data/PairwiseDistance/Distance_' + filename
-    curvepath = '../data/PairwiseDistance/Curve_' + filename1
+    path = './data/Curves/' + filename
+    distpath = './data/PairwiseDistance/Distance_' + filename
+    curvepath = './data/PairwiseDistance/Curve_' + filename1
     curves = pd.read_csv(path, index_col=0, header=0)
     dist, curves0, curveAvg, curveLen = caldist_Tcor(path, 18, 100, -100, 500, 1000) 
     distDF = pd.DataFrame(dist)
@@ -275,9 +275,9 @@ def DisMatGen_TEuc(DUname):
     t0 = time.time()
     filename = DUname + '_20171018_20181031.csv'
     filename1 = DUname + '_20171018_20181031.xlsx'
-    path = '../data/Curves/' + filename    
-    distpath = '../data/PairwiseDistance/Distance_' + filename
-    curvepath = '../data/PairwiseDistance/Curve_' + filename1
+    path = './data/Curves/' + filename
+    distpath = './data/PairwiseDistance/Distance_' + filename
+    curvepath = './data/PairwiseDistance/Curve_' + filename1
     curves = pd.read_csv(path, index_col=0, header=0)
     dist, curves0, curveAvg, curveLen = caldist_TEuc(path, 18, 100, -100, 500) 
     distDF = pd.DataFrame(dist)
@@ -296,9 +296,9 @@ def DisMatGen_TMan(DUname):
     t0 = time.time()
     filename = DUname + '_20171018_20181031.csv'
     filename1 = DUname + '_20171018_20181031.xlsx'
-    path = '../data/Curves/' + filename    
-    distpath = '../data/PairwiseDistance/Distance_' + filename
-    curvepath = '../data/PairwiseDistance/Curve_' + filename1
+    path = './data/Curves/' + filename
+    distpath = './data/PairwiseDistance/Distance_' + filename
+    curvepath = './data/PairwiseDistance/Curve_' + filename1
     curves = pd.read_csv(path, index_col=0, header=0)
     dist, curves0, curveAvg, curveLen = caldist_TMan(path, 18, 100, -100, 500) 
     distDF = pd.DataFrame(dist)

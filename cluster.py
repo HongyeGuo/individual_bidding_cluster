@@ -157,7 +157,7 @@ def adaptiveKMedoids(D, kmin, kmax, curveAvg, curveLen, threshold,cores, iterati
 
 if __name__ == '__main__':
     
-    path = '../data/Curves/' + 'BW01_20171018_20180418.csv'
+    path = './data/Curves/' + 'BW01_20171018_20180418.csv'
     D, curves, curveAvg , curveLen= caldist(path, 18, 100, -100, 500, 70)    
     J, M, C, k, vC, numC, probC, valid_MDinds = adaptiveKMedoids(D, 5, 30, curveAvg , curveLen, 0.01,18)    
 
