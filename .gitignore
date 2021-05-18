@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # test results
-./data/Cluster/
-./data/Curves/
+data/Cluster/
+data/Curves/
