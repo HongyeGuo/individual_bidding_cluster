@@ -12,7 +12,7 @@ The output of the algorithm, which is the clustering results, will be stored in 
 
 ### Applications
 The code can be used for academic using. If it has some helps for your research, you can quote the paper [1].  
-The code has already been used in paper [2].   
+The code has already been used in paper [2] as the data preprocessing method.   
 
 
 ### Reference
