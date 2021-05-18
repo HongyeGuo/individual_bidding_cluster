@@ -32,7 +32,6 @@ def demo(ID, start, end, kmin, kmax, cores, curvePara, CapabilityCap, threshold=
         curves1 = clip(curves.copy(), pmin, pmax)
     
     D, curveAvg, curveLen = caldist(curves1, cores, curvePara, distanceMethod, pmin)
-    #D, curves1, curveAvg, curveLen = caldist(save_path, cores, curvePara, -100, 500)
     J, M, C, k, vC, numC, probC, valid_MDinds = adaptiveKMedoids(D, kmin, kmax, curveAvg, curveLen, threshold, cores=cores, iterations=iterations, tolerance=tolerance)
     # identify the type
     curves['labels'] = J
@@ -48,14 +47,23 @@ def demo(ID, start, end, kmin, kmax, cores, curvePara, CapabilityCap, threshold=
     probC1[M,0] = probC
     curves['probC'] = probC1
 
+    # find centers
+    curves_centers = dict(list(curves.groupby(['centers'])))[1]
+    curves_labels = curves.loc[:, ['labels']]
+
     # generate result path
     save_dir = './data/Cluster/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
-    save_path = save_dir + ID  +'_'+start.strftime("%Y%m%d")+'_'+end.strftime("%Y%m%d")+'-Ver'+ str(version)+'-Thr' + str(threshold) +'-Cap'+ str(CapabilityCap) + '-vldNum' + str(valid_MDinds) + '-k' + str(k)+'.csv'
-    curves.to_csv(save_path)
-    print(str(time.strftime("%Y%m%d %X", time.localtime()) )+' '+'Function: demo4 is done: '+str(time.time()-t0))
-    return save_path, J, M, C, k, vC, numC, probC, curveAvg, curves, curves1, valid_MDinds
+    save_path = start.strftime("%Y%m%d")+'_'+end.strftime("%Y%m%d")+ str(version)+'-Thr' + str(threshold) +'-Cap'+ str(CapabilityCap) + '-vldNum' + str(valid_MDinds) + '-k' + str(k)+'.csv'
+    save_path_centers = save_dir + ID  +'-centers_' + save_path
+    save_path_labels = save_dir + ID + '-labels_' + save_path
+
+    curves_centers.to_csv(save_path_centers)
+    curves_labels.to_csv(save_path_labels)
+
+    print(str(time.strftime("%Y%m%d %X", time.localtime()) )+' '+'Function: demo is done: '+str(time.time()-t0))
+    return save_path, J, M, C, k, vC, numC, probC, curveAvg, curves, curves_centers, curves_labels, valid_MDinds
 
 
 if __name__ == '__main__':
@@ -96,7 +104,7 @@ if __name__ == '__main__':
         
         print(str(time.strftime("%Y%m%d %X", time.localtime()) )+' '+'ID: '+str(ID)+' starts!')
         t0 = time.time()
-        save_path,J, M, C, k, vC, numC, probC, curveAvg, curves, curves1, valid_MDinds = demo(ID, start, end, kmin, kmax, cores, curvePara, CapabilityCap, threshold, iterations, version, tolerance, pmin, pmax, part, distanceMethod)
+        save_path,J, M, C, k, vC, numC, probC, curveAvg, curves, curves_centers, curves_labels, valid_MDinds = demo(ID, start, end, kmin, kmax, cores, curvePara, CapabilityCap, threshold, iterations, version, tolerance, pmin, pmax, part, distanceMethod)
 
 
 
